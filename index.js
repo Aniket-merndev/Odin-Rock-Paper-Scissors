@@ -55,7 +55,15 @@ function playRound(humanChoice, computerChoice) {
     document.querySelector("#oponentChose").innerHTML = `<img src = "${computerChoice}.png" width="50px"><br>${computerChoice}`;
 
     if (currentRound > noOfRounds) {
-        document.querySelector("#whoWin").textContent = "Game Over!";
+        if(humanScore>computerScore){
+        document.querySelector("#whoWin").textContent = "Game Over! You Win !";
+        }
+        else if(computerScore>humanScore){
+        document.querySelector("#whoWin").textContent = "Game Over! Oponent Wins !";
+        }
+        else{
+        document.querySelector("#whoWin").textContent = "Game Over! Draw !";
+        }
         return;
     }
 

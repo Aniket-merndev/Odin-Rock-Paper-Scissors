@@ -8,11 +8,12 @@
     <style>
         body{
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 50vh;
             background-color: black;
             color: white;
+            height: 150vh;
         }
         h1{
             font-size: 50px;
@@ -21,11 +22,88 @@
             padding: 20px;
             border: 5px solid red;
         }
+        button{
+            padding: 10px;
+            margin: 10px;
+            color: white;
+            background-color: darkolivegreen;
+            border-radius: 50%;
+            width:150px ;
+            height: 150px;
+            font-size: larger;
+            transition: box-shadow 0.2s;
+            }
+            button:active {
+                box-shadow: 0 0 30px 10px red;
+        }
+        #round{
+            display: flex;
+            font-size: larger;
+            color: lightgreen;
+            margin-top: 50px;
+        }
+        #result{
+            margin-top:10px;
+            display: flex;
+            justify-content: space-around;
+            width: 80vw;
+        }
+        #result > div {
+            flex: 1;
+            text-align: center;
+            border: 1px solid red;
+        }
+        #you{
+            background-color: gainsboro;
+            color: black;
+        }
+
+        #oponent{
+            background-color: gainsboro;
+            color: black;
+        }
+
+        #score{
+
+        }
     </style>
 </head>
 <body>
-    <h1 id="rps">Press F12 to Open the Console and Play the Game !</h1>
+    <h1 id="rps">Rock Paper Scissors Game</h1>
+    <div>
+        <h2 style="text-align: center; color: red;">Choose</h2>
+        <button ><img src="rock.png" width="50px" id="rock"><br>Rock</button>
+        <button ><img src="paper.png" width="50px" id="paper"><br>Paper</button>
+        <button ><img src="scissors.png" width="50px" id="scissors"> <br>  Scissors</button>
+    </div>
+
+    <div id="round">
+        <h2 id="roundNumber">Round => 1</h2>
+    </div>
+   
+    <div id="result">
+        <div id="you">
+            <h2>You</h2>
+            <h2 id="youChose"></h2>
+        </div>
+
+        <div id="oponent">
+            <h2>Oponent</h2>
+            <h2 id="oponentChose" style="color: red;"></h2>
+        </div>
+
+        <div id="score">
+            <h2>Score</h2>
+            <h2 id="humanScore">Human Score : 0</h2>
+            <h2 id="oponentScore">Oponent Score : 0</h2>
+        </div>
+    </div>
+
+    <h2 id="whoWin" style="color: yellow;"></h2>
 
     <script src="index.js"></script>
+
+
+
 </body>
 </html>
